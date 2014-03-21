@@ -21,7 +21,7 @@
 	
 	<config-file target="res/xml/config.xml" parent="/*">
         <feature name="BCWifi">
-            <param name="android-package" value="org.bcsphere.bluetooth.BCWifi"/>
+            <param name="android-package" value="org.bcsphere.wifi.BCWifi"/>
         </feature>
     </config-file>
     
