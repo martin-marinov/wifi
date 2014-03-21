@@ -33,4 +33,15 @@
 
   </platform>
 
+  <!-- ios -->
+  <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+          <feature name="wifi">
+              <param name="ios-package" value="BCWifi" onload="true" />
+          </feature>
+      </config-file>
+    
+      <header-file src="src/ios/BCWifi.h" />
+      <source-file src="src/ios/BCWifi.m" />
+  </platform>
 </plugin>
