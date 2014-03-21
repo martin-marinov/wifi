@@ -16,7 +16,7 @@
 
 #import "CDVNetworkInterface.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
-@implementation CDVNetworkInterface
+@implementation BCWifi
 
 - (NSString *)getIP {
     NSString *address = @"error";

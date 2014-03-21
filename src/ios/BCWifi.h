@@ -19,8 +19,8 @@
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 
-@interface CDVNetworkInterface : CDVPlugin
+@interface BCWifi: CDVPlugin
 
-- (void) getIPAddress:(CDVInvokedUrlCommand*)command;
+- (void)getConnectedWifiInfo:(CDVInvokedUrlCommand*)command;
 
 @end
