@@ -21,7 +21,7 @@ public class BCWifi extends CordovaPlugin {
 		WifiManager wifiManager = (WifiManager) context
 				.getSystemService(Context.WIFI_SERVICE);
 		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-		if (action == "getConnectedWifiInfo") {
+		if (action.equals("getConnectedWifiInfo")) {
 			JSONObject obj = new JSONObject();
 			try {
 				JSONObject activity = new JSONObject();
