@@ -15,7 +15,7 @@
  */
 
 #import "BCWifi.h"
-#import <SystemConfiguration/CaptiveNetwork.h>
+
 @implementation BCWifi
 
 - (NSString *)getIP {
@@ -52,10 +52,14 @@
 - (void)getConnectedWifiInfo:(CDVInvokedUrlCommand*)command{
     CDVPluginResult* pluginResult = nil;
     NSString* ipaddr = [self getIP];
+    NSMutableDictionary *dicInfo = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* dicSSID = [self getSSIDinfo];
-    [dicSSID setValue:ipaddr forKey:@"IP"];
-    if (dicSSID != nil) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dicSSID];
+    [dicInfo setObject:[NSString stringWithFormat:@"%@",ipaddr] forKey:@"IPAddress"];
+    [dicInfo setObject:[NSString stringWithFormat:@"%@",[dicSSID objectForKey:@"BSSID"]] forKey:@"BSSID"];
+    [dicInfo setObject:[NSString stringWithFormat:@"%@",[dicSSID objectForKey:@"SSID"]] forKey:@"SSID"];
+    [dicInfo setObject:@"" forKey:@"MacAddress"];
+    if (ipaddr != nil && ![ipaddr isEqualToString:@"error"]) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dicInfo];
     } else {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     }
