@@ -36,8 +36,8 @@
   <!-- ios -->
   <platform name="ios">
       <config-file target="config.xml" parent="/*">
-          <feature name="wifi">
-              <param name="ios-package" value="BCWifi" onload="true" />
+          <feature name="BCWifi">
+              <param name="ios-package" value="BCWifi"/>
           </feature>
       </config-file>
     
