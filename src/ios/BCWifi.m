@@ -14,7 +14,7 @@
  limitations under the License.
  */
 
-#import "CDVNetworkInterface.h"
+#import "BCWifi.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
 @implementation BCWifi
 
