@@ -24,7 +24,7 @@ var interval_index = null;
  */
 var wifi = {
 	
-	getConnectedWifiInfo: function(){
+	getConnectedWifiInfo: function(successFunc,errorFunc){
 		cordova.exec(successFunc,errorFunc,"BCWifi","getConnectedWifiInfo",[]);
 	},
 	
