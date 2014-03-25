@@ -11,20 +11,20 @@
 	<engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>
-	
+
 	<js-module src="www/wifi.js" name="wifi">
         <merges target="navigator.wifi" />
     </js-module>
 
   <!-- android -->
   <platform name="android">
-	
+
 	<config-file target="res/xml/config.xml" parent="/*">
         <feature name="BCWifi">
             <param name="android-package" value="org.bcsphere.wifi.BCWifi"/>
         </feature>
     </config-file>
-    
+
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     </config-file>
@@ -40,8 +40,11 @@
               <param name="ios-package" value="org.bcsphere.wifi.BCWifi"/>
           </feature>
       </config-file>
-    
+
       <header-file src="src/ios/BCWifi.h" />
       <source-file src="src/ios/BCWifi.m" />
+
+      <!-- system frameworks -->
+        <framework src="SystemConfiguration.framework" />
   </platform>
 </plugin>
